@@ -1,5 +1,10 @@
 .navbar-img {
     border-radius: 50%;
+}
+
+.navbar-default {
+    background: white;
+    background-image: none;
     border-color: white;
-    border-width: thin;
+    box-shadow: none;
 }
