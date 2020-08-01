@@ -19,8 +19,8 @@ const MPHeader = ({onRouteChange}) => {
                     <Nav.Link onClick={() => onRouteChange('ContactMe')}>Contact Me</Nav.Link>
                 </Nav>
                 <nav>
-                    <a class="navbar-brand" href="#" onClick={() => onRouteChange('About')}>
-                        <img class='navbar-img' src={NavImage} width="30" height="30" alt="" />
+                    <a className="navbar-brand" href="#" onClick={() => onRouteChange('About')}>
+                        <img className='navbar-img' src={NavImage} width="30" height="30" alt="" />
                     </a>
                 </nav>
             </Navbar.Collapse>
