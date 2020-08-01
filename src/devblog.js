@@ -16,7 +16,18 @@ export const devblog = [{
             'Implemented DevBlog: No functionality other than providing information on the progress of the web application.  DevBlogData is being passed into DevBlog component from JSON.',
             'Implemented Projects: Page that displays my projects with github links.  Link bound to github logo, may need to be more specific on the link.  It may be hard for users to notice the link.'
         ]
-    }
+    },
+    {
+        date: '8/1/2020',
+        id: '3',
+        project: 'My Portfolio Web Application',
+        notes: [
+            'Created a landing page that describes the page being under construction.  OOF!  Added React-Bootstrap version of Carousel, replaced the old one.',
+            'Added context to the Contact Me page, simple image with some contact information.  Will replace this with form and email transaction API as described in Contact Me',
+            'Will likely be switching gears to .Net to prepare for interviews, and will return to finish up the front end and begin working on the Node.js service',
+            'Deployed Web App as is for now.'
+        ]
+    },
 ]
 
 export default devblog;

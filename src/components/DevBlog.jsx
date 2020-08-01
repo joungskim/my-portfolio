@@ -9,7 +9,6 @@ const DevBlog = ({devblog}) => {
         notes,
     } = devblog;
 
-    console.log(date);
     return (
         <div className='ba b--black-10 shadow-5 bg-white-90 ma3 pa3'>
             <h3>{'Dev-Blog #'} {id} </h3> 

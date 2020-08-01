@@ -3,13 +3,13 @@ import './App.css';
 import 'tachyons';
 import MPHeader from '../components/MPHeader.jsx';
 import Particles from 'react-particles-js';
-import Scroll from '../components/Scroll';
+import ContactMe from '../components/ContactMe'
 import Home from '../components/Home';
-import Resume from '../components/Resume.jsx';
+import Resume from '../components/Resume';
 import DevBlog from '../components/DevBlog';
 import Projects from '../components/Projects';
 
-import ResumeData from '../resumeData.js';
+import ResumeData, { resumeData } from '../resumeData.js';
 import DevBlogData from '../devblog.js';
 import ProjectsData from '../projects.js';
 
@@ -66,7 +66,7 @@ class App extends Component {
                              : route === 'Projects' ? ProjectsData.map((project) => {
                                  return (
                                      <Projects project={project}/>                                 )
-                             }) : <div></div>
+                             }) : route === 'ContactMe' ? <ContactMe name={ResumeData.name} email={ResumeData.email} /> : <Home />
                         }
                     </div>
                 </div>

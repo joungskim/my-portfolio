@@ -16,7 +16,6 @@ function Resume({ ResumeData }) {
         devNotes,
     } = ResumeData;
 
-    console.log(skills);
 //ba b--black-10 shadow-5 bg-white-90 ma3 pa3
     return (
         <div className="container-fluid">
