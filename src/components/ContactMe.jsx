@@ -24,7 +24,7 @@ const ContactMe = ({ name, email }) => {
                                     {email}
                                 </h1>
                             </address>
-                            <p>{'In Development: Implementing Form with E-Mail transactions that will allow users to email me directly through this web application.'}</p>
+                            <p>{'In Development: Implementing Form with E-Mail transactions that will allow users to email me directly through this web application. See Dev Blog for more details.'}</p>
                         </div>
                     </div>
                 </div>
