@@ -7,9 +7,6 @@ import {Tab, Tabs} from 'react-bootstrap'
 function Resume({ ResumeData }) {
     const {
         name,
-        image,
-        phone,
-        email,
         objective,
         github,
         experience,
@@ -20,13 +17,13 @@ function Resume({ ResumeData }) {
     } = ResumeData;
 
     console.log(skills);
-
+//ba b--black-10 shadow-5 bg-white-90 ma3 pa3
     return (
-        <div className="container-fluid br3 ba b--black-10 shadow-5 bg-white-90 tl pa3">
+        <div className="container-fluid">
             <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-12 ma3">
                     <div className="row">
-                        <div className="col-md-6 br3 ba b--black-10 shadow-5 bg-white-90 ma3 pa3">
+                        <div className="col-md-6">
                             <h1 className="tl">{name}</h1>
                             <p className="v-mid">{objective}</p>
                             {
@@ -42,36 +39,14 @@ function Resume({ ResumeData }) {
 
                             }
                         </div>
-                        <div className="center col-md-2 br3 ba b--black-10 shadow-5 bg-white-90 ma3 pa3 s">
-                            <h3 className="text-center">
-                                <strong>
-                                    {'Media Links'}
-                                </strong>
-                            </h3>
-                            <ul>
-                                <li>
-                                    <a href={github} target='blank'>
-                                        {'Github'}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={linkedin} target='blank'>
-                                        {'LinkedIn'}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={instagram} target='blank'>
-                                        {'Instagram'}
-                                    </a>
-                                </li>
-                            </ul>
+                        <div className="center col-md-2">
                         </div>
-                        <div className="center col-md-3 br3 ba b--black-10 shadow-5 bg-white-90 ma3 pa3">
+                        <div className="center col-md-3 ">
                             <img className="br3" src={MeImg}></img>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6 br3 ba b--black-10 shadow-5 bg-white-90 ma3 pa3">
+                        <div className="col-md-5 ">
                             <h3>
                                 <strong>
                                     Experience
@@ -85,7 +60,7 @@ function Resume({ ResumeData }) {
                                 })
                             }
                         </div>
-                        <div className="col-md-5 br3 ba b--black-10 shadow-5 bg-white-90 ma3 pa3">
+                        <div className="col-md-6 ma3">
                         <Tabs defaultActiveKey={skills[0].title} transition={false} id="noanim-tab-example">
                             {
                                 skills.map((skill) => {
@@ -104,6 +79,26 @@ function Resume({ ResumeData }) {
                                     )
                                 })
                             }
+                            {/*TODO redo this to generate links from props as an array.*/}
+                            <tab eventKey = {'Links'} title = {'Links'}>
+                            <ul>
+                                <li>
+                                    <a href={github} target='blank'>
+                                        {'Github'}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={linkedin} target='blank'>
+                                        {'LinkedIn'}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={instagram} target='blank'>
+                                        {'Instagram'}
+                                    </a>
+                                </li>
+                            </ul>
+                            </tab>
                         </Tabs>
                         </div>
                     </div>

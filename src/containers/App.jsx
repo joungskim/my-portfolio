@@ -4,9 +4,15 @@ import 'tachyons';
 import MPHeader from '../components/MPHeader.jsx';
 import Particles from 'react-particles-js';
 import Scroll from '../components/Scroll';
-import Home from '../components/Home'
-import Resume from '../components/Resume.jsx'
-import ResumeData from '../resumeData.js'
+import Home from '../components/Home';
+import Resume from '../components/Resume.jsx';
+import DevBlog from '../components/DevBlog';
+import Projects from '../components/Projects';
+
+import ResumeData from '../resumeData.js';
+import DevBlogData from '../devblog.js';
+import ProjectsData from '../projects.js';
+
 
 const particlesOptions = {
     particles: {
@@ -44,14 +50,23 @@ class App extends Component {
                     <MPHeader onRouteChange={this.onRouteChange} />
                 </div>
                 <div className="container-fluid background-image">
-                    <div className="body-container">
+                    <div className="body-container br3 ba b--black-10 shadow-5 bg-white-90 tl pa3">
                     <Particles className='particles'
                         params={particlesOptions}
                     />
                         {
                             route === 'Home' ? <Home /> 
                             : route === 'Resume' ? <Resume ResumeData={ResumeData} />
-                            : <div></div>
+                            : route === 'DevBlog' ? 
+                            DevBlogData.map((dbd) => {
+                                return (
+                                    <DevBlog devblog={dbd} />
+                                )
+                            })
+                             : route === 'Projects' ? ProjectsData.map((project) => {
+                                 return (
+                                     <Projects project={project}/>                                 )
+                             }) : <div></div>
                         }
                     </div>
                 </div>

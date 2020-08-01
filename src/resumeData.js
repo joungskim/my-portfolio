@@ -3,7 +3,7 @@ export const resumeData = {
     image: '',
     phone: '785-375-3759',
     email: 'jsk.fni@gmail.com',
-    objective: 'Seeking a Software Developer position in an upward growing organization to utilize expertise in software development and testing using agile development methodologies.',
+    objective: 'Seeking a Software Developer position in an upward growing organization to utilize expertise in software development and testing using Agile development methodologies.',
     github: 'https://github.com/joungskim',
     linkedin: 'https://www.linkedin.com/in/jr-kim-235b0496',
     instagram: 'https://www.instagram.com/brokenchopstik/',
@@ -36,7 +36,9 @@ export const resumeData = {
             date: 'May 2016 - July 2016',
             description: 'Uplifted a Contracts web application from ASP.NET Forms to ASP.NET MVC that displays contracts through browsers for clients to review. ',
             duties: [
-                ''
+                'Wrote code to consume sharepoint databases for contracts.',
+                'Attended SCRUM and Learned some AGILE practices.',
+                'Major focus on Story break downs using JIRA.'
             ]
         },
         {
@@ -48,7 +50,8 @@ export const resumeData = {
             date: 'May 2015 - July 2015',
             description: 'Contributed modular revisions to HCI Indexing in .NET Windows Forms Application.',
             duties: [
-                ''
+                'Wrote modular patterns such as singletons on to decouple code.',
+                'Wrote a forms application to track hours and notes.'
             ]
         },
         {
@@ -60,12 +63,14 @@ export const resumeData = {
             date: 'MAY 2014 - DECEMBER 2014',
             description: 'Wrote tests in Visual Basic legacy code for aircraft flight software on government planes.',
             duties: [
-                ''
+                'Engineer documentation for kzt-32 documentation of internal software use.',
+                'Write end-to-end test coverage for legacy VB code.',
+                'Worked with PHP, Laravel, and PostGRES.'
             ]
         }
     ],
     skills: [{
-            title: 'Technologies:',
+            title: 'Technologies',
             context: [
                 'Javascript',
                 'Node.JS',
@@ -109,7 +114,7 @@ export const resumeData = {
             title: 'Citizenship',
             context: [
                 'U.S Citizen.',
-                'I am eligible to work in the U.S as I am a U.S Citizen.',
+                'I am eligible to work in the U.S.',
                 'I will not be needing any sponsorships now or in the future.'
             ]
         },
@@ -118,7 +123,7 @@ export const resumeData = {
         'About this page:',
         'Front-End Tools - Tachyons, Bootstrap.',
         'Technologies - React.js',
-        'Dev-Notes - A ResumeData prop from JSON is being passed to Resume.jsx component.  This populates all the data on this web application. Feel Free to take a look in my Github under my-portfolio to see code.'
+        'Dev-Notes - A ResumeData prop from JSON is being passed to Resume.jsx component.  This populates all the data on this web application. Feel Free to take a look in my Github under my-portfolio to see code.  The link can be found in the Links tab below.'
     ]
 }
 
