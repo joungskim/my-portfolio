@@ -37,7 +37,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setState({route: 'PostContactMe'})
+        this.setState({route: 'Resume'})
     }
 
     onRouteChange = (newRoute) => {
