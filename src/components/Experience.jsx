@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Button, CardBody, Card } from 'react-bootstrap';
+import { Collapse } from 'react-bootstrap';
 
 //TODO: Fix animations on collapse to be smoother. 
 const Experience = (exp, key) => {
@@ -30,6 +30,8 @@ const Experience = (exp, key) => {
                     <i>{date}</i> 
                     {' - '}
                     {title}
+                    {' - '}
+                    {type}
                 </div>
                 <Collapse in={open}>
                     <div className="card-body collapse">

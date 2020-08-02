@@ -1,37 +1,140 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card'
+import React, { Component } from 'react'
+import emailjs from 'emailjs-com';
+import './ContactMe.css'
 
 
-const ContactMe = ({ name, email }) => {
-    return (
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img 
-                                src='https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/40679802_10105199269589031_6255792958100996096_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=ZGH6yiRIL9oAX-pMiKC&_nc_ht=scontent-dfw5-2.xx&oh=a6d330037d74dee71797e70422cae5dd&oe=5F4C9492'
-                                className='br3'
-                            />
-                        </div>
-                        <div class="col-md-6">
-                            <address className='v-mid h-mid'>
-                                <h1>
-                                    <strong>
-                                        {name}
-                                    </strong>
-                                    <br /> 
-                                    {email}
-                                </h1>
-                            </address>
-                            <p>{'In Development: Implementing Form with E-Mail transactions that will allow users to email me directly through this web application. See Dev Blog for more details.'}</p>
-                        </div>
-                    </div>
-                </div>
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+
+class ContactMe extends Component {
+
+    state = {
+        name: '',
+        email: '',
+        number: '',
+        message: '',
+        subject: ''
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+
+        const {
+            name,
+            email,
+            number,
+            message,
+            subject
+        } = this.state
+
+        const { onRouteChange } = this.props;
+
+        const {
+            userid,
+            templateid,
+            serviceid,
+        } = this.props.apiData;
+
+        let template_params = {
+            email: email,
+            name: name,
+            contact_number: number,
+            message: message,
+            subject: subject
+        }
+
+        emailjs.send(
+            serviceid,
+            templateid,
+            template_params,
+            userid
+        ).then((result) => {
+            console.log(result)
+            this.resetForm();
+            onRouteChange('PostContactMe');
+        }, (error) => {
+            console.log("Sending Email Failed, post banner message: " + {error});
+        });
+    }
+    resetForm() {
+        this.setState({
+            name: '',
+            email: '',
+            number: '',
+            message: '',
+        })
+    }
+    handleChange = (param, e) => {
+        this.setState({ [param]: e.target.value });
+    }
+    render() {
+        return (
+            <div>
+                <h1 className="p-heading1">{'Contact Me'}</h1>
+                <Form onSubmit={this.handleSubmit.bind(this)}>
+                    <FormGroup controlId="formBasicEmail">
+                        <Label className="text-muted">Your Email Address</Label>
+                        <Input
+                            type="email"
+                            name="email"
+                            value={this.state.email}
+                            className="text-primary"
+                            onChange={this.handleChange.bind(this, 'email')}
+                            placeholder="Enter email"
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="formBasicName">
+                        <Label className="text-muted">Name</Label>
+                        <Input
+                            type="text"
+                            name="name"
+                            value={this.state.name}
+                            className="text-primary"
+                            onChange={this.handleChange.bind(this, 'name')}
+                            placeholder="Name"
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="formBasicSubject">
+                        <Label className="text-muted">Subject</Label>
+                        <Input
+                            type="text"
+                            name="subject"
+                            className="text-primary"
+                            value={this.state.subject}
+                            onChange={this.handleChange.bind(this, 'subject')}
+                            placeholder="Subject"
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="formBasicNumber">
+                        <Label className="text-muted">Phone Number (Optional)</Label>
+                        <Input
+                            type="text"
+                            name="number"
+                            className="text-primary"
+                            value={this.state.number}
+                            onChange={this.handleChange.bind(this, 'number')}
+                            placeholder="Phone Number"
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="formBasicMessage">
+                        <Label className="text-muted">Message</Label>
+                        <Input
+                            type="textarea"
+                            name="message"
+                            className="text-primary input-textarea"
+                            value={this.state.message}
+                            onChange={this.handleChange.bind(this, 'message')}
+                            required
+                        />
+                    </FormGroup>
+                    <Button variant="primary" type="submit">
+                        Submit
+                        </Button>
+                </Form>
             </div>
-        </div>
-    )
-
+        )
+    }
 }
-
-export default ContactMe;
+export default ContactMe

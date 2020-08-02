@@ -1,6 +1,6 @@
 export const resumeData = {
     name: 'JR Kim',
-    image: '',
+    image: 'https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/40679802_10105199269589031_6255792958100996096_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=dNHmMOXZL0kAX9mwB9k&_nc_ht=scontent-dfw5-2.xx&oh=77b97059efcfd07d862e106262fe7f82&oe=5F4C9492',
     phone: '785-375-3759',
     email: 'jsk.fni@gmail.com',
     objective: 'Seeking a Software Developer position in an upward growing organization to utilize expertise in software development and testing using Agile development methodologies.',

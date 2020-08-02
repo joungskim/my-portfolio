@@ -8,10 +8,12 @@ import Home from '../components/Home';
 import Resume from '../components/Resume';
 import DevBlog from '../components/DevBlog';
 import Projects from '../components/Projects';
+import PostContactMe from '../components/PostContactMe'
 
-import ResumeData, { resumeData } from '../resumeData.js';
+import ResumeData from '../resumeData.js';
 import DevBlogData from '../devblog.js';
 import ProjectsData from '../projects.js';
+import ApiKeys from '../apikeysData.js'
 
 
 const particlesOptions = {
@@ -30,12 +32,12 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            route: ''
+            route: '',
         }
     }
 
     componentDidMount() {
-        this.setState({route: 'Resume'})
+        this.setState({route: 'PostContactMe'})
     }
 
     onRouteChange = (newRoute) => {
@@ -65,8 +67,14 @@ class App extends Component {
                             })
                              : route === 'Projects' ? ProjectsData.map((project) => {
                                  return (
-                                     <Projects project={project}/>                                 )
-                             }) : route === 'ContactMe' ? <ContactMe name={ResumeData.name} email={ResumeData.email} /> : <Home />
+                                     <Projects project={project}/>                                 
+                                    )
+                             }) : route === 'ContactMe' ? 
+                                    <ContactMe
+                                        apiData={ApiKeys.emailjs}
+                                        onRouteChange={this.onRouteChange}
+                                    /> 
+                                : route === 'PostContactMe' ? <PostContactMe /> : <Home />
                         }
                     </div>
                 </div>

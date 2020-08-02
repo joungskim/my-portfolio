@@ -28,6 +28,15 @@ export const devblog = [{
             'Deployed Web App as is for now.'
         ]
     },
+    {
+        date: '8/2/2020',
+        id: '4',
+        project: 'My Portfolio Web Application',
+        notes: [
+            'Added EmailJS api to Contact Me page.  Form built using reactstrap and tachyons.  Form will submit a transaction to Emailjs/Mailgun and email me directly with context.',
+            'Need to scrub API ID using .env file.  Nothing fancy here folks.'
+        ]
+    },
 ]
 
 export default devblog;

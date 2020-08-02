@@ -1,7 +1,7 @@
 import React from 'react';
 import MeImg from "../Me.PNG";
 import Experience from './Experience';
-import {Tab, Tabs} from 'react-bootstrap'
+import { Tab, Tabs } from 'react-bootstrap'
 
 
 function Resume({ ResumeData }) {
@@ -14,9 +14,10 @@ function Resume({ ResumeData }) {
         linkedin,
         instagram,
         devNotes,
+        image
     } = ResumeData;
 
-//ba b--black-10 shadow-5 bg-white-90 ma3 pa3
+    //ba b--black-10 shadow-5 bg-white-90 ma3 pa3
     return (
         <div className="container-fluid">
             <div className="row">
@@ -41,10 +42,51 @@ function Resume({ ResumeData }) {
                         <div className="center col-md-2">
                         </div>
                         <div className="center col-md-3 ">
-                            <img className="br3" src={MeImg}></img>
+                            <img className="br3" src={image}></img>
                         </div>
                     </div>
                     <div className="row">
+                        <div className="col-md-6 ma3">
+                            <Tabs defaultActiveKey={skills[0].title} transition={false} id="noanim-tab-example">
+                                {
+                                    skills.map((skill) => {
+                                        return (
+                                            <Tab eventKey={skill.title} title={skill.title}>
+                                                <ul>
+                                                    {
+                                                        skill.context.map((ctx) => {
+                                                            return (
+                                                                <li>{ctx}</li>
+                                                            )
+                                                        })
+                                                    }
+                                                </ul>
+                                            </Tab>
+                                        )
+                                    })
+                                }
+                                {/*TODO redo this to generate links from props as an array.*/}
+                                <tab eventKey={'Links'} title={'Links'}>
+                                    <ul>
+                                        <li>
+                                            <a href={github} target='blank'>
+                                                {'Github'}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href={linkedin} target='blank'>
+                                                {'LinkedIn'}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href={instagram} target='blank'>
+                                                {'Instagram'}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </tab>
+                            </Tabs>
+                        </div>
                         <div className="col-md-5 ">
                             <h3>
                                 <strong>
@@ -58,47 +100,6 @@ function Resume({ ResumeData }) {
                                     )
                                 })
                             }
-                        </div>
-                        <div className="col-md-6 ma3">
-                        <Tabs defaultActiveKey={skills[0].title} transition={false} id="noanim-tab-example">
-                            {
-                                skills.map((skill) => {
-                                    return (
-                                        <Tab eventKey={skill.title} title={skill.title}>
-                                            <ul>
-                                                {
-                                                    skill.context.map((ctx) => {
-                                                        return(
-                                                            <li>{ctx}</li>
-                                                        )
-                                                    })
-                                                }
-                                            </ul>
-                                        </Tab>
-                                    )
-                                })
-                            }
-                            {/*TODO redo this to generate links from props as an array.*/}
-                            <tab eventKey = {'Links'} title = {'Links'}>
-                            <ul>
-                                <li>
-                                    <a href={github} target='blank'>
-                                        {'Github'}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={linkedin} target='blank'>
-                                        {'LinkedIn'}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={instagram} target='blank'>
-                                        {'Instagram'}
-                                    </a>
-                                </li>
-                            </ul>
-                            </tab>
-                        </Tabs>
                         </div>
                     </div>
                 </div>
