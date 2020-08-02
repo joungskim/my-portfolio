@@ -37,7 +37,7 @@ export const resumeData = {
             description: 'Uplifted a Contracts web application from ASP.NET Forms to ASP.NET MVC that displays contracts through browsers for clients to review. ',
             duties: [
                 'Wrote code to consume sharepoint databases for contracts.',
-                'Attended SCRUM and Learned some AGILE practices.',
+                'Attended SCRUM and Learned basic Agile practices.',
                 'Major focus on Story break downs using JIRA.'
             ]
         },
@@ -50,7 +50,7 @@ export const resumeData = {
             date: 'May 2015 - July 2015',
             description: 'Contributed modular revisions to HCI Indexing in .NET Windows Forms Application.',
             duties: [
-                'Wrote modular patterns such as singletons on to decouple code.',
+                'Wrote modular patterns such as singletons to decouple code.',
                 'Wrote a forms application to track hours and notes.'
             ]
         },
