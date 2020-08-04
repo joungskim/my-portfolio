@@ -3,7 +3,7 @@ export const covid = [{
         context: 'I went to bed with a slight sore throat, but didn’t think much of it.  I was vaping a lot that evening so it wouldn’t be uncommon if my throat had been compromised from it.  I went to bed without a second thought with confidence that tomorrow would be better.'
     },
     {
-        day: 'Da0y 2:',
+        day: 'Day 2:',
         context: 'My throat was still a bit messed up from the night before.  Not like this anyways.  As the day progressed I noticed a small cough developing.  I ate a rather large meal consisting of some Korean food my mother sent, followed by a food coma that would render me unconscious for the rest of the evening.'
     },
     {

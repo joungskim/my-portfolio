@@ -7,7 +7,8 @@ import './Home.css'
 //TODO: Create carousel that will generate images with titles, descriptions, and videos using video-react for youtube videos from LPData Prop
 //npm for react video: npm install --save video-react react react-dom redux
 //Website for video-react: https://video-react.js.org/
-const Home = ({ LPData }) => {
+const Home = ({ LPData, covidData }) => {
+    console.log(covidData);
     return (
         <div className="container-fluid">
             <Carousel>

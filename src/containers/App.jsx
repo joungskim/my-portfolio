@@ -14,6 +14,7 @@ import ResumeData from '../resumeData.js';
 import DevBlogData from '../devblog.js';
 import ProjectsData from '../projects.js';
 import ApiKeys from '../apikeysData.js'
+import CovidData from '../covidData.js'
 
 
 const particlesOptions = {
@@ -57,7 +58,7 @@ class App extends Component {
                         params={particlesOptions}
                     />
                         {
-                            route === 'Home' ? <Home /> 
+                            route === 'Home' ? <Home covidData={CovidData}/> 
                             : route === 'Resume' ? <Resume ResumeData={ResumeData} />
                             : route === 'DevBlog' ? 
                             DevBlogData.map((dbd) => {

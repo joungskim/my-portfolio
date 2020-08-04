@@ -8,7 +8,6 @@ const Experience = (exp, key) => {
         date,
         description,
         duties,
-        img,
         location,
         title,
         type
