@@ -16,7 +16,7 @@ const Experience = (exp, key) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div id={key} className="ma2 br3 ba b--black-10 shadow-5 bg-white-90">
+        <div id={key} className="ma2 br3 ba b--black-10 bg-white-90">
             <div className="card">
                 <div
                     className="card-header pointer"

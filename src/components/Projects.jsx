@@ -12,7 +12,7 @@ const Projects = ({project}) => {
     } = project;
 
     return (
-        <div className='ba b--black-10 shadow-5 bg-white-90 ma3 pa3'>
+        <div className='ba b--black-10 br3 bg-white-90 ma3 pa3'>
             <h3>
                 <a href={url} target='blank'> 
                     {'Project: '} {name} {' '}

@@ -8,18 +8,16 @@ import './MPHeader.css';
 const MPHeader = ({onRouteChange}) => {
     return (
         <Navbar collapseOnSelect fixed="top" expand="lg" bg="light" variant="light">
-            <Navbar.Brand onClick={() => onRouteChange('Home')}>JR Kim</Navbar.Brand>
+            <Navbar.Brand onClick={() => onRouteChange('Resume')}>JR Kim</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link onClick={() => onRouteChange('Home')}>Home</Nav.Link>
                     <Nav.Link onClick={() => onRouteChange('Resume')}>Resume</Nav.Link>
                     <Nav.Link onClick={() => onRouteChange('Projects')}>Projects</Nav.Link>
-                    <Nav.Link onClick={() => onRouteChange('DevBlog')}>Dev Blog</Nav.Link>
                     <Nav.Link onClick={() => onRouteChange('ContactMe')}>Contact Me</Nav.Link>
                 </Nav>
                 <nav>
-                    <a className="navbar-brand" href="#" onClick={() => onRouteChange('About')}>
+                    <a className="navbar-brand" href="#" onClick={() => onRouteChange('Resume')}>
                         <img className='navbar-img' src={NavImage} width="30" height="30" alt="" />
                     </a>
                 </nav>

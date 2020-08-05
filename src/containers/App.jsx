@@ -53,13 +53,9 @@ class App extends Component {
                     <MPHeader onRouteChange={this.onRouteChange} />
                 </div>
                 <div className="container-fluid background-image">
-                    <div className="body-container br3 ba b--black-10 shadow-5 bg-white-90 tl pa3">
-                    <Particles className='particles'
-                        params={particlesOptions}
-                    />
+                    <div className="body-container br3 ba b--black-10 bg-white-90 tl pa3">
                         {
-                            route === 'Home' ? <Home covidData={CovidData}/> 
-                            : route === 'Resume' ? <Resume ResumeData={ResumeData} />
+                            route === 'Resume' ? <Resume ResumeData={ResumeData} />
                             : route === 'DevBlog' ? 
                             DevBlogData.map((dbd) => {
                                 return (
@@ -75,7 +71,7 @@ class App extends Component {
                                         apiData={ApiKeys.emailjs}
                                         onRouteChange={this.onRouteChange}
                                     /> 
-                                : route === 'PostContactMe' ? <PostContactMe /> : <Home />
+                                : route === 'PostContactMe' ? <PostContactMe /> : <Resume ResumeData={ResumeData} />
                         }
                     </div>
                 </div>
