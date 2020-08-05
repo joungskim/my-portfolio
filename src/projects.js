@@ -1,4 +1,12 @@
 export const projects = [{
+        name: 'VAC Profiles .Net Core Web Application',
+        url: 'https://github.com/joungskim/profiles-vac',
+        description: 'Profiles web application, entry point for scheduling, messaging, etc.',
+        features: 'View employee profiles, add, delete, edit, search functionality.',
+        status: 'Complete.',
+        stack: '.Net Core MVC, SQL Server, Entity Framework, Bootstrap'
+    },
+    {
         name: 'My Portfolio',
         url: 'https://github.com/joungskim/my-portfolio',
         description: 'Portfolio website to keep up with my resume, content creation, and latest projects.',
