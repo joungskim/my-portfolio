@@ -23,7 +23,7 @@ function Resume({ ResumeData }) {
             <div className="row">
                 <div className="col-md-12 ma3">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-7">
                             <h1 className="tl">{name}</h1>
                             <p className="v-mid">{objective}</p>
                             {
@@ -39,15 +39,22 @@ function Resume({ ResumeData }) {
 
                             }
                         </div>
-                        <div className="center col-md-2">
-                        </div>
                         <div className="center col-md-3 ">
                             <img className="br3" src={image}></img>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6 ma3">
-                            <Tabs defaultActiveKey={skills[0].title} transition={false} id="noanim-tab-example">
+                        <div className="col-md-11 ma3">
+                            <Tabs defaultActiveKey='Experience'transition={false} id="noanim-tab-example">
+                                <Tab eventKey='Experience' title='Experience'>
+                                    {
+                                        experience.map((exp) => {
+                                            return (
+                                                <Experience exp={exp} />
+                                            )
+                                        })
+                                    }
+                                </Tab>
                                 {
                                     skills.map((skill) => {
                                         return (
@@ -86,20 +93,6 @@ function Resume({ ResumeData }) {
                                     </ul>
                                 </tab>
                             </Tabs>
-                        </div>
-                        <div className="col-md-5 ">
-                            <h3>
-                                <strong>
-                                    Experience
-                                </strong>
-                            </h3>
-                            {
-                                experience.map((exp) => {
-                                    return (
-                                        <Experience exp={exp} />
-                                    )
-                                })
-                            }
                         </div>
                     </div>
                 </div>
